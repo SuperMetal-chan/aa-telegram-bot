@@ -1,4 +1,8 @@
-﻿namespace TelegramBotForms
+﻿using System;
+using System.IO;
+using DotNetEnv;
+
+namespace TelegramBotForms
 {
     partial class Form1
     {
@@ -47,12 +51,13 @@
             // 
             // textBox1
             // 
+            DotNetEnv.Env.Load(Directory.GetCurrentDirectory());
             this.textBox1.Font = new System.Drawing.Font("DejaVu Serif Condensed", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.textBox1.Location = new System.Drawing.Point(65, 60);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(345, 23);
             this.textBox1.TabIndex = 1;
-            this.textBox1.Text = "857098321:AAFAjTqg7uIidinXsF5eWSNswxXMhEbBMLI";
+            this.textBox1.Text = Environment.GetEnvironmentVariable("BOT_TOKEN");
             this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // button1
