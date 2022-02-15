@@ -108,7 +108,7 @@ namespace TelegramBotForms
                                     }
                                 }
                                 else if (message.Text == "/send_jojo_photo"
-                                         || message.Text == "/send_jojo_photo@ActuallyAdequateBot")
+                                         | message.Text == "/send_jojo_photo@ActuallyAdequateBot")
                                 {
                                     try
                                     {
@@ -122,7 +122,8 @@ namespace TelegramBotForms
                                         else
                                         {
                                             int temp7 = rand.Next(arrJojo.Length);
-                                            await bot.SendPhotoAsync(message.Chat.Id, arrJojo[temp7]);
+                                            await bot.SendPhotoAsync(message.Chat.Id, arrJojo[temp7],
+                                                replyToMessageId: message.MessageId);
                                         }
                                     }
                                     catch (Exception exc)
